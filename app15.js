@@ -10,29 +10,30 @@ app.set('view engine', 'hbs')
 
 //uso de parcialees "codigo que se repite en mas de un llugar o paginas web"
 hbs.registerPartials(__dirname + './views/partials')
+app.use(express.static('./public3/template'))
 
 //servir contenido estatico public3 donde esta el template
 app.use(express.static('./public3'))
 
 //enviando argunmentos a home2
-app.get('/', (req,res) => {
-    res.render('./views/home3.hbs',{
+app.get('/', (req, res) => {
+    res.render('home3', {
         nombre: 'Alejandra Gomez',
-        titulo: 'Curso de node'
+        titulo: 'Curso de Node'
     })
 })
 
 app.get('/generic', (req, res) => {
     res.render('generic', {
-        nombre: 'Alejandra Goemz',
-        titulo: 'Curso de node'
+        nombre: 'Alejandra Gomez',
+        titulo: 'Curso de Node'
     })
 })
 
 app.get('/elements', (req, res) => {
     res.render('elements', {
-        nombre: 'Alejandra Goemz',
-        titulo: 'Curso de node'
+        nombre: 'Alejandra Gomez',
+        titulo: 'Curso de Node'
     })
 })
 

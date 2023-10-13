@@ -1,17 +1,15 @@
 {
-  "name": "05-webservice",
+  "dependencies": {
+    "express": "^4.18.2",
+    "hbs": "^4.2.0"
+  },
+  "name": "05-webService",
   "version": "1.0.0",
-  "description": "",
-  "main": "app15.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "hbs": "^4.2.0"
-  }
+  "description": ""
 }
