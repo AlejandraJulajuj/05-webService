@@ -6,21 +6,22 @@ const port = 8080
 app.set('view engine', 'hbs')
 
 //servir contenido estatico public3 donde esta el templated
-app.use(express.static('/05-webService/public3'))
+//app.use(express.static('./public3/template'))
+app.use(express.static('./public3'))
 
 app.get('/', (req,res) =>{
-    res.render('./views/home.hbs', {
+    res.render('home2', {
         nombre: 'Alejandra gomez',
         titulo: 'Curso de Node'
     })
 })
 
-app.get('./public3/template/generic.html', (req, res) => {
-    res.sendFile(__dirname + './public3/generic.html')
+app.get('/generic', (req, res) => {
+    res.sendFile(__dirname + './public3/template/generic.html')
 })
 
-app.get('./public3/template/elements.html', (req, res) => {
-    res.sendFile(__dirname + './public3/elements.html')
+app.get('/elements', (req, res) => {
+    res.sendFile(__dirname + './public3/template/elements.html')
 })
 
 app.get('*', (req, res) => {

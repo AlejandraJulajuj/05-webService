@@ -5,11 +5,11 @@ const port = 8080
 //servir contenido estatico de la pagina principal 
 app.use(express.static('./public2'))
 
-app.get('./public2/generic.html', (req, res) => {
+app.get('/generic.', (req, res) => {
     res.sendFile(__dirname + './public2/generic.html')
 })
 
-app.get('./public2/elements.html', (req, res) => {
+app.get('/elements.html', (req, res) => {
     res.sendFile(__dirname + './public2/elements.html')
 })
 

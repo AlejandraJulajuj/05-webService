@@ -22,25 +22,25 @@ app.get('/', (req,res) => {
     })
 })
 
-pp.get('./public3/template/generic.html', (req, res) => {
+app.get('/generic', (req, res) => {
     res.render('generic', {
         nombre: 'Alejandra Goemz',
         titulo: 'Curso de node'
     })
 })
 
-app.get('./public3/template/elements.html', (req, res) => {
+app.get('/elements', (req, res) => {
     res.render('elements', {
         nombre: 'Alejandra Goemz',
         titulo: 'Curso de node'
     })
 })
 
-app.get('./public3/template/generic.html', (req, res) => {
+app.get('/generic', (req, res) => {
     res.sendFile(__dirname + './public3/template/generic.html')
 })
 
-app.get('./public3/template/elements.html', (req, res) => {
+app.get('/elements', (req, res) => {
     res.sendFile(__dirname + './public3/template/elements.html')
 })
 

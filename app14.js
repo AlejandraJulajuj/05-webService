@@ -11,35 +11,41 @@ app.set('view engine', 'hbs')
 hbs.registerPartials(__dirname + './views/partials')
 
 //servir contenido estatico public3 donde esta el templated
-app.use(express.static('/05-webService/public3'))
+app.use(express.static('./public3'))
 
 app.get('/', (req,res) =>{
-    res.render('./views/home3.hbs', {
+    res.render('home3', {
         nombre: 'Alejandra gomez',
         titulo: 'Curso de Node'
     })
 })
 
-app.get('./public3/template/generic.html', (req, res) => {
-    res.render('./views/generic.hbs', {
+/**app.get('/generic', (req, res) => {
+    res.render('generic', {
         nombre: 'Alejandra Goemz',
         titulo: 'Curso de node'
     })
 })
 
-app.get('./public3/template/elements.html', (req, res) => {
-    res.render('./views/elements.hbs', {
+app.get('/elements', (req, res) => {
+    res.render('elements', {
+        nombre: 'Alejandra Goemz',
+        titulo: 'Curso de node'
+    })
+})*/
+
+app.get('/generic', (req, res) => {
+    res.render('./public3/template/generic.html',{
         nombre: 'Alejandra Goemz',
         titulo: 'Curso de node'
     })
 })
 
-app.get('./public3/template/generic.html', (req, res) => {
-    res.sendFile(__dirname + './public3/template/generic.html')
-})
-
-app.get('./public3/template/elements.html', (req, res) => {
-    res.sendFile(__dirname + './public3/template/elements.html')
+app.get('/elements', (req, res) => {
+    res.sendFile('./public3/template/elements.html',{
+        nombre: 'Alejandra Goemz',
+        titulo: 'Curso de node'
+    })
 })
 
 app.get('*', (req, res) => {
